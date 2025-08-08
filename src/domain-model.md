@@ -34,3 +34,31 @@ As a user I want to be able to:
 |          |                                                                                | if toDoList is empty                          | return empty list                          |
 |          | Map<String,String> descendingList sortDescending(Map<'String,String> toDoList) | if toDoList not empty                         | return sorted toDoList in descending order |
 |          |                                                                                | if toDoList empty                             | return empty list                          |
+
+
+## User stories
+- I want to be able to get a task by a unique ID.
+- I want to update the name of a task by providing its ID and a new name.
+- I want to be able to change the status of a task by providing its ID.
+- I want to be able to see the date and time that I created each task.
+
+
+| Classes           | Methods                              | Scenario                | Output               |
+|-------------------|--------------------------------------|-------------------------|----------------------|
+| TodoListExtension | Task getTask(int id)                 | if task exist           | return Task          |
+|                   |                                      | if task not in list     | return null          |
+|                   | void addTask(Task task)              | if task not in list     | add task to list     | 
+|                   |                                      | if task already in list | return false         |
+|                   | String getName(int id)               | if task in list         | return name          | 
+|                   |                                      | if task not in list     | return empty string  |
+|                   | boolean changeStatus(id)             | if task in list         | update status        |
+|                   |                                      | if task not in list     | return false         |
+| ----------------- | ------------------------------------ | ----------------------- | -------------------- |
+| Task              | int getId()                          | if task exist           | return id            |
+|                   |                                      | if task not in list     | return null          |
+|                   | String getName()                     | if task in list         | return name          |
+|                   | boolean updateName(String s)         |                         | update name          |
+|                   |                                      |                         |                      |
+|                   | boolean changeStatus( )              | if task exist           | update status        |
+|                   |                                      |                         |                      |
+|                   | boolean getDate()                    | if task exist           | return date and time |
