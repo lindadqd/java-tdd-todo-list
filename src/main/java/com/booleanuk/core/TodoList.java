@@ -75,7 +75,7 @@ public class TodoList {
     public Map<String, String> sortAscending(Map<String, String> toDoList) {
         List<String> sortedAscendingList = new ArrayList<>(toDoList.keySet());
         Collections.sort(sortedAscendingList);
-        Map<String, String> sortedAscending = new HashMap<>();
+        Map<String, String> sortedAscending = new TreeMap<>();
         for(String key : sortedAscendingList){
             String value  = toDoList.get(key);
             sortedAscending.put(key, value);
@@ -86,7 +86,6 @@ public class TodoList {
 
     public Map<String, String>  sortDescending(Map<String, String> toDoList) {
         List<String> sortedDescendingList = new ArrayList<>(toDoList.keySet());
-        sortedDescendingList.sort(Collections.reverseOrder());
         Map<String, String> sortedDescending = new TreeMap<>(Comparator.reverseOrder());
         for(String key : sortedDescendingList){
             String value  = toDoList.get(key);
